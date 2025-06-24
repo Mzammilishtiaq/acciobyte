@@ -15,11 +15,11 @@ export default function Footer() {
             <Image src={Logo} alt="Acciobyte Logo" width={90} height={90} className="mb-4" />
             <div className="text-base mb-2">14 West Street Wakefield WF2 8UA England</div>
             <div className="flex items-center text-base mb-1">
-              <Phone className="h-4 w-4 mr-2 text-lime-400" />
+              <Phone className="h-4 w-4 mr-2 text-[#bff747]" />
               +447861402051
             </div>
             <div className="flex items-center text-base">
-              <Mail className="h-4 w-4 mr-2 text-lime-400" />
+              <Mail className="h-4 w-4 mr-2 text-[#bff747]" />
               contact@acciobyte.com
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>Terms of Services</li>
             </ul>
             {/* <div className="mt-6 flex items-center">
-              <span className="inline-block w-4 h-4 bg-lime-400 rounded-full"></span>
+              <span className="inline-block w-4 h-4 bg-[#bff747] rounded-full"></span>
             </div> */}
           </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-lime-400 hover:bg-lime-300 text-black font-semibold py-3 rounded transition-colors"
+                className="w-full bg-[#bff747] hover:bg-lime-300 text-black font-semibold py-3 rounded transition-colors"
               >
                 Subscribe
               </motion.button>

@@ -108,8 +108,8 @@ export default function Portfolio() {
     <section className="py-12 sm:py-16 md:py-20 bg-black text-white relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-lime-400/3 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-lime-400/2 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-[#bff747]/3 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-[#bff747]/2 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
@@ -129,7 +129,7 @@ export default function Portfolio() {
               onClick={() => handleFilterChange(category)}
               className={`px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
                 activeFilter === category
-                  ? "bg-lime-400 text-black"
+                  ? "bg-[#bff747] text-black"
                   : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
               }`}
             >
@@ -140,7 +140,7 @@ export default function Portfolio() {
 
         {/* Portfolio Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 overflow-y-auto scrollbar-thin scrollbar-thumb-lime-400 scrollbar-track-gray-800"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 overflow-y-auto scrollbar-thin scrollbar-thumb-[#bff747] scrollbar-track-gray-800"
           style={{
             maxHeight: "70vh",
             scrollbarColor: "#a3e635 #1f2937",
@@ -157,56 +157,25 @@ export default function Portfolio() {
               whileHover={{ y: -10 }}
               className="group cursor-pointer"
             >
-              <div className="bg-gray-900/50 border border-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-lime-400/50 transition-all duration-300 hover:bg-gray-800/50">
+              <div className="bg-gray-900/50 border border-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-[#bff747]/50 transition-all duration-300 hover:bg-gray-800/50 ">
                 <div
-                  className={`relative h-48 sm:h-56 md:h-64 ${item.bgColor} overflow-hidden`}
-                >
+                  className={`relative  h-[50vh] ${item.bgColor} overflow-hidden`}>
                   {/* Project Preview */}
                   <div className="absolute inset-3 sm:inset-4 bg-white/10 rounded-xl sm:rounded-2xl backdrop-blur-sm border border-white/20">
-                    <Image src={item.image} alt="" className="w-full h-full object-cover rounded-lg sm:rounded-xl"/>
+                    <Image src={item.image} alt="" className="rounded-lg sm:rounded-xl"/>
                   </div>
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-lime-400 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <svg
-                          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          />
-                        </svg>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#bff747] rounded-full flex items-center justify-center mx-auto mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-up-right w-8 h-8 text-white group-hover/hover-circle:!text-black"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                       </div>
                       <span className="text-white font-medium text-xs sm:text-sm md:text-base">
                         View Project
                       </span>
                     </div>
                   </div>
-                </div>
-
-                <div className="p-4 sm:p-5 md:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-lime-400 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-3">
-                    {item.description}
-                  </p>
-                  <span className="text-lime-400 text-xs font-medium uppercase tracking-wider">
-                    {item.category}
-                  </span>
                 </div>
               </div>
             </motion.div>
@@ -221,7 +190,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <button className="bg-gray-800 hover:bg-lime-400 hover:text-black text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+          <button className="bg-gray-800 hover:bg-[#bff747] hover:text-black text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
             Load More Projects
           </button>
         </motion.div> */}

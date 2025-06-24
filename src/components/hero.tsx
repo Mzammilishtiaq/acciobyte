@@ -1,9 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Play} from "lucide-react";
 import BGImage from '../../public/hero_bg3.jpg'
+import ScrollBanner from "./ScrollBanner";
+import { useState, useEffect } from "react";
+
 export default function Hero() {
+  // Carousel service names
+  const services = [
+    "Website Development",
+    "App Development",
+    "Content Writing",
+    "Graphic Designing",
+    "SEO Optimization",
+    "Cyber Security",
+    "Video Animation"
+  ];
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % services.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [services.length]);
+
   return (
     <section
       className="relative min-h-screen bg-black text-white overflow-hidden"
@@ -17,7 +38,7 @@ export default function Hero() {
 
 
       {/* Background Geometric Elements */}
-      <div className="absolute inset-0 bg-[#0000006d]">
+      <div className="absolute inset-0 bg-[#00000000]">
         {/* Large geometric shape - top right */}
         {/* <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -52,7 +73,7 @@ export default function Hero() {
             {Array.from({ length: 9 }).map((_, i) => (
               <div
                 key={i}
-                className="w-2 h-2 bg-lime-400 rounded-full opacity-60"
+                className="w-2 h-2 bg-[#bff747] rounded-full opacity-60"
               ></div>
             ))}
           </div>
@@ -83,7 +104,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="container flex flex-col lg:flex-col md:flex-row mx-auto px-4 sm:px-6 relative z-10 pt-16 sm:pt-20 gap-8 md:gap-0">
+      <div className="container flex flex-col lg:flex-col md:flex-row mx-auto lg:px-32 px-6 relative z-10 pt-16 sm:pt-20 gap-8 md:gap-0">
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -91,29 +112,42 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-6 sm:mb-8"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal leading-tight">
+            <h1 className="lg:text-left text-center text-4xl md:text-5xl lg:text-8xl font-normal leading-tight">
               Innovative solutions for
               <br />
-              <span className="text-lime-400 font-semibold">Website Development</span>
+              <span className="inline-block min-h-[1em]">
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={services[current]}
+                    className="text-[#bff747] font-semibold inline-block"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {services[current]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h1>
           </motion.div>
         <div className="flex lg:flex-row flex-col items-start">
-        <div className="max-w-6xl mx-auto w-full md:w-1/2">
+        <div className="max-w-6xl flex lg:flex-row flex-col items-start justify-between lg:gap-x-[300px] w-full">
           {/* Left Side Circular Element */}
-          <div className="flex  items-center gap-4 sm:gap-[10px] mb-6">
-            <div className="inset-4 bg-lime-400 rounded-full flex items-center justify-center hover:bg-lime-500 transition-colors cursor-pointer group p-3 sm:p-5">
+          <div className="flex  items-start  sm:gap-[10px] mb-6 lg:mx-0 mx-auto">
+            <div className="inset-4 bg-[#bff747] rounded-full flex items-center justify-center hover:bg-lime-500 transition-colors cursor-pointer group lg:p-10 p-10">
               <Play className="h-5 w-5 sm:h-6 sm:w-6 text-black group-hover:scale-110 transition-transform" />
             </div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -180 }}
-              animate={{ opacity: 90, scale: 1, rotate: [0,360] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className=""
+             initial={{ rotate: 0 }}
+             animate={{ rotate: 360 }}
+             transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
+             className="-ml-10 -z-10 w-32 h-32 rounded-full md:block lg:block hidden"
             >
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16">
+              <div className="relative w-20 h-20 sm:w-16 sm:h-16">
                 {/* Outer ring with text */}
-                <div className="inset-0 rounded-full border border-gray-600">
-                  <svg className="" viewBox="0 0 120 120">
+                <div className="inset-0 rounded-full w-32 h-32">
+                  <svg className="w-32 h-32" viewBox="0 0 120 120">
                     <defs>
                       <path
                         id="circle-path"
@@ -128,18 +162,19 @@ export default function Hero() {
                   </svg>
                 </div>
                 {/* Inner circle with play button */}
-                <ArrowUpRight className="absolute lg:left-6 left-2 lg:top-5 top-[30%] bottom-0 right-0 h-5 w-5 sm:h-6 sm:w-6" />
+               <div className="w-32 h-32 rounded-full flex items-center justify-center absolute left-0 top-0 bottom-0 right-0">
+               <ArrowUpRight className=" h-5 w-5 sm:h-6 sm:w-6" />
+               </div>
               </div>
             </motion.div>
           </div>
-        </div>
-        <div className="w-full md:w-1/2">
+        <div className="lg:w-full w-full md:w-1/2">
           {/* Description */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="max-w-2xl mb-8 sm:mb-12"
+            className="mb-8 sm:mb-12"
           >
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               At our Creative Digital Agency, we bring your ideas to life by
@@ -154,53 +189,24 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+            className="flex flex-row items-center gap-x-4 sm:gap-6 lg:pb-0 pb-10"
           >
             <button className="bg-gray-700 hover:bg-gray-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base">
               Get In Touch
             </button>
-            <button className="bg-lime-400 hover:bg-lime-500 text-black w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0 transition-all duration-300 hover:scale-110 flex justify-center items-center">
+            <button className="bg-[#bff747] hover:bg-lime-500 text-black w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0 transition-all duration-300 hover:scale-110 flex justify-center items-center">
               <ArrowUpRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </motion.div>
         </div>
         </div>
+        </div>
       </div>
 
       {/* Scrolling Services Banner */}
-      <div className="absolute bottom-0 left-0 right-0 bg-lime-400 py-2 sm:py-4 overflow-hidden">
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: [0, -1000] }}
-          transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 20, ease: "linear" } }}
-        >
-          <div className="flex items-center space-x-4 sm:space-x-8 text-black font-bold text-base sm:text-xl">
-            <span>Android App Development</span>
-            <span className="text-2xl">✱</span>
-            <span>Website Development</span>
-            <span className="text-2xl">✱</span>
-            <span>Digital Marketing</span>
-            <span className="text-2xl">✱</span>
-            <span>UI/UX Design</span>
-            <span className="text-2xl">✱</span>
-            <span>E-commerce Solutions</span>
-            <span className="text-2xl">✱</span>
-            <span>Mobile App Development</span>
-            <span className="text-2xl">✱</span>
-            <span>SEO Optimization</span>
-            <span className="text-2xl">✱</span>
-            <span>Brand Identity</span>
-            <span className="text-2xl">✱</span>
-            <span>Android App Development</span>
-            <span className="text-2xl">✱</span>
-            <span>Website Development</span>
-            <span className="text-2xl">✱</span>
-            <span>Digital Marketing</span>
-            <span className="text-2xl">✱</span>
-            <span>UI/UX Design</span>
-          </div>
-        </motion.div>
-      </div>
+     <div className="my-10 lg:my-0">
+     <ScrollBanner/>
+     </div>
     </section>
   );
 }

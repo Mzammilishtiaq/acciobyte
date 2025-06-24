@@ -20,8 +20,8 @@ function pagerheader({ subtitle1, subtitle2, subtitle3, title,classsubtitle2,cla
         backgroundRepeat: "no-repeat",
       }}
     >
-      <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-white text-center leading-tight">
-        Our <span className="text-lime-400">{title}</span>
+      <h1 className="text-5xl md:text-6xl lg:text-8xl font-semibold text-white text-center leading-tight">
+        Our <span className="text-[#bff747]">{title}</span>
       </h1>
       <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-3 md:gap-x-5 text-sm sm:text-lg md:text-xl lg:text-2xl text-center">
         <span>{subtitle1}</span>

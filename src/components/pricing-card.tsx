@@ -43,7 +43,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, fe
                     <ul className="space-y-3 sm:space-y-4">
                         {firstHalfFeatures.map((feature, index) => (
                             <li key={index} className="flex items-start">
-                                <Check className="h-4 w-4 sm:h-5 sm:w-5 text-lime-400 mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0" />
+                                <Check className="h-4 w-4 sm:h-5 sm:w-5 text-[#bff747] mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0" />
                                 <span className="text-xs sm:text-sm md:text-base">{feature}</span>
                             </li>
                         ))}
@@ -51,7 +51,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, fe
                     <ul className={`space-y-3 sm:space-y-4 ${highlighted ? 'sm:border-l sm:border-gray-700 sm:pl-4 md:pl-8' : ''}`}>
                         {secondHalfFeatures.map((feature, index) => (
                             <li key={index} className="flex items-start">
-                                <Check className="h-4 w-4 sm:h-5 sm:w-5 text-lime-400 mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0" />
+                                <Check className="h-4 w-4 sm:h-5 sm:w-5 text-[#bff747] mr-2 sm:mr-3 mt-0.5 sm:mt-1 flex-shrink-0" />
                                 <span className="text-xs sm:text-sm md:text-base">{feature}</span>
                             </li>
                         ))}
@@ -59,7 +59,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, description, price, fe
                 </div>
             </div>
             <div className="mt-6 sm:mt-8 md:mt-10">
-                <button className="bg-lime-400 text-black font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-xl w-full hover:bg-lime-500 transition-colors text-sm sm:text-base md:text-lg">
+                <button className="bg-[#bff747] text-black font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-xl w-full hover:bg-lime-500 transition-colors text-sm sm:text-base md:text-lg">
                     Get Started
                 </button>
             </div>

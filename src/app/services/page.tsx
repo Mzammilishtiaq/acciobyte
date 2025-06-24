@@ -16,8 +16,8 @@ export default function ServicesPage() {
             <motion.div className="bg-[#181818] rounded-xl p-6 flex flex-col items-center shadow-lg" whileHover={{ scale: 1.03 }}>
               <img src="/app1.jpg" alt="Step 1" className="rounded-lg mb-4 w-full h-32 object-cover" />
               <div className="flex items-center gap-2 mb-2">
-                <CheckCircle className="text-lime-400" />
-                <span className="text-lime-400 font-bold">STEP 01</span>
+                <CheckCircle className="text-[#bff747]" />
+                <span className="text-[#bff747] font-bold">STEP 01</span>
               </div>
               <h3 className="font-semibold text-lg mb-2 text-center">Requirement Analysis</h3>
               <p className="text-sm text-gray-400 text-center">We understand your business needs, target audience, and goals to create a development roadmap.</p>
@@ -26,8 +26,8 @@ export default function ServicesPage() {
             <motion.div className="bg-[#181818] rounded-xl p-6 flex flex-col items-center shadow-lg" whileHover={{ scale: 1.03 }}>
               <img src="/app2.jpg" alt="Step 2" className="rounded-lg mb-4 w-full h-32 object-cover" />
               <div className="flex items-center gap-2 mb-2">
-                <CheckCircle className="text-lime-400" />
-                <span className="text-lime-400 font-bold">STEP 02</span>
+                <CheckCircle className="text-[#bff747]" />
+                <span className="text-[#bff747] font-bold">STEP 02</span>
               </div>
               <h3 className="font-semibold text-lg mb-2 text-center">Design & Development</h3>
               <p className="text-sm text-gray-400 text-center">Our designers create a visually appealing product, while developers build a functional, high-performance website.</p>
@@ -36,8 +36,8 @@ export default function ServicesPage() {
             <motion.div className="bg-[#181818] rounded-xl p-6 flex flex-col items-center shadow-lg" whileHover={{ scale: 1.03 }}>
               <img src="/app3.jpg" alt="Step 3" className="rounded-lg mb-4 w-full h-32 object-cover" />
               <div className="flex items-center gap-2 mb-2">
-                <CheckCircle className="text-lime-400" />
-                <span className="text-lime-400 font-bold">STEP 03</span>
+                <CheckCircle className="text-[#bff747]" />
+                <span className="text-[#bff747] font-bold">STEP 03</span>
               </div>
               <h3 className="font-semibold text-lg mb-2 text-center">Testing & Deployment</h3>
               <p className="text-sm text-gray-400 text-center">Each solution is tested across browsers, security, and speed, and deployed for launch with ongoing support.</p>
@@ -46,7 +46,7 @@ export default function ServicesPage() {
 
           {/* FAQ Section */}
           <div className="mt-10">
-            <h2 className="text-3xl font-bold mb-6 text-lime-400">Lets address your questions today!</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[#bff747]">Lets address your questions today!</h2>
             <div className="space-y-4">
               {/* FAQ Item 1 */}
                 <motion.div
@@ -56,7 +56,7 @@ export default function ServicesPage() {
                 >
                   <div className="flex justify-between items-center">
                     <span>How long does it take to develop a website?</span>
-                    <span className="text-lime-400 text-xl transition-transform duration-200">
+                    <span className="text-[#bff747] text-xl transition-transform duration-200">
                       {faqOpen ? "−" : "+"}
                     </span>
                   </div>
@@ -77,9 +77,9 @@ export default function ServicesPage() {
             <h3 className="text-lg font-bold mb-4">Services Category</h3>
             <ul className="space-y-2">
               {['Website Development', 'Digital Marketing', 'Graphic Designing', 'Social Media Marketing', 'Search Engine Optimization', 'Software Development', 'Cyber Security', 'E-Commerce', 'Electronics', 'Video Animation'].map((item) => (
-                <li key={item} className="flex items-center justify-between hover:text-lime-400 cursor-pointer">
+                <li key={item} className="flex items-center justify-between hover:text-[#bff747] cursor-pointer">
                   <span>{item}</span>
-                  <span className="text-lime-400">+</span>
+                  <span className="text-[#bff747]">+</span>
                 </li>
               ))}
             </ul>
@@ -87,10 +87,10 @@ export default function ServicesPage() {
 
           {/* Contact Card */}
           <div className="bg-[#181818] rounded-xl p-6 flex flex-col items-center text-center shadow-lg">
-            <MessageSquare className="text-lime-400 w-10 h-10 mb-2" />
+            <MessageSquare className="text-[#bff747] w-10 h-10 mb-2" />
             <h4 className="font-bold mb-2">You have different questions?</h4>
             <p className="text-gray-400 mb-4">Our team is available to answer all your questions.</p>
-            <a href="tel:+20106565314" className="bg-lime-400 text-black font-bold px-6 py-2 rounded-full hover:bg-lime-500 transition">(20) 1065-65314</a>
+            <a href="tel:+20106565314" className="bg-[#bff747] text-black font-bold px-6 py-2 rounded-full hover:bg-lime-500 transition">(20) 1065-65314</a>
           </div>
         </div>
       </div>

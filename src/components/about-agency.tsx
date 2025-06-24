@@ -34,7 +34,7 @@ const features = [
 export default function AboutAgency() {
   return (
     <section className="py-20 bg-black text-white relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto lg:px-32 px-5 sticky top-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side */}
           <div >
@@ -45,10 +45,10 @@ export default function AboutAgency() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 mb-8"
+              className="flex items-center gap-2 mb-8 lg:mx-0 lg:justify-start justify-center mx-auto"
             >
-              <span className="text-lime-400 text-lg">✱</span>
-              <span className="text-lime-400 font-medium tracking-wider">ABOUT AGENCY</span>
+              <span className="text-[#bff747] text-lg">✱</span>
+              <span className="text-[#bff747] font-medium tracking-wider">ABOUT AGENCY</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -57,16 +57,14 @@ export default function AboutAgency() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 text-center lg:text-left"
             >
-              <h2 className="text-xl lg:text-5xl md:text-6xl font-bold leading-tight">
-                Crafting <span className="text-lime-400">unique</span>
+              <h2 className="text-4xl lg:text-5xl md:text-6xl font-normal leading-tight">
+                Crafting <span className="text-[[#bff747]]">unique</span>
                 <br />
-                <span className="text-lime-400">digital</span>
+                <span className="text-[#bff747]">digital</span>
                 <br />
-                experiences that
-                <br />
-                elevate your brand
+                <span className="lg:text-5xl text-sm">experiences that elevate your brand</span>
               </h2>
             </motion.div>
 
@@ -76,7 +74,7 @@ export default function AboutAgency() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="flex items-center gap-4 mb-16"
+              className="flex items-center gap-x-4 mb-16 lg:justify-start justify-center"
             >
               <button
                 className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
@@ -85,68 +83,13 @@ export default function AboutAgency() {
               </button>
 
               <button
-                className="bg-lime-400 hover:bg-lime-500 text-black w-14 h-14 rounded-full p-0 transition-all duration-300 hover:scale-110 flex justify-center items-center"
+                className="bg-[#bff747] hover:bg-lime-500 text-black w-14 h-14 rounded-full p-0 transition-all duration-300 hover:scale-110 flex justify-center items-center"
               >
                 <ArrowUpRight className="h-6 w-6" />
               </button>
             </motion.div>
 
-            {/* 3D Hexagonal Sphere */}
-            <motion.div
-              animate={{ 
-                opacity: 90, 
-                scale: 1, 
-                rotate: [0,360],
-              }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute -bottom-20  -left-36 w-80 h-80"
-            >
-              <motion.div
-                animate={{ 
-                  opacity: 0.5, 
-                  scale: 1, 
-                  rotate: [0,360],
-                }}
-                transition={{ 
-                  duration: 1,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className="w-full h-full"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                {/* <svg viewBox="0 0 300 300" className="w-full h-full opacity-60">
-                  {Array.from({ length: 8 }).map((_, row) =>
-                    Array.from({ length: 8 }).map((_, col) => {
-                      const x = col * 30 + (row % 2) * 15 + 20
-                      const y = row * 25 + 20
-                      return (
-                        <motion.polygon
-                          key={`${row}-${col}`}
-                          points={`${x},${y - 10} ${x + 8},${y - 5} ${x + 8},${y + 5} ${x},${y + 10} ${x - 8},${y + 5} ${x - 8},${y - 5}`}
-                          fill="none"
-                          stroke="#374151"
-                          strokeWidth="1"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: [0.3, 0.8, 0.3] }}
-                          transition={{
-                            duration: 3,
-                            delay: (row + col) * 0.1,
-                            repeat: Number.POSITIVE_INFINITY,
-                            ease: "easeInOut",
-                          }}
-                        />
-                      )
-                    }),
-                  )}
-                </svg> */}
-                <Image src={SphereSpinner} className="opacity-50" alt={""}/>
-              </motion.div>
-            </motion.div>
+          
           </div>
           </div>
 
@@ -169,14 +112,14 @@ export default function AboutAgency() {
                   {/* Icon */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-16 h-16 bg-lime-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-lime-500 transition-colors duration-300"
+                    className="w-16 h-16 bg-[#bff747] rounded-2xl flex items-center justify-center mb-6  group-hover:bg-lime-300 transition-colors duration-300"
                   >
                     <feature.icon className="h-8 w-8 text-black" />
                   </motion.div>
 
                   {/* Content */}
                   <div>
-                    <h3 className="text-2xl font-bold group-hover:text-lime-400 transition-colors duration-300 mb-6">
+                    <h3 className="text-2xl font-bold group-hover:text-[[#bff747]] transition-colors duration-300 mb-6">
                       {feature.title}
                     </h3>
                     <p className="text-gray-300 leading-relaxed text-lg">{feature.description}</p>
@@ -189,7 +132,7 @@ export default function AboutAgency() {
                       whileInView={{ scaleY: 1 }}
                       transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
                       viewport={{ once: true }}
-                      className="w-5 h-5 rounded-full bg-lime-400 -ml-10 -mt-32 origin-top"
+                      className="w-5 h-5 rounded-full bg-[[#bff747]] -ml-10 -mt-32 origin-top"
                     ></motion.div>
                   )}
                 </motion.div>
@@ -199,10 +142,34 @@ export default function AboutAgency() {
         </div>
       </div>
 
-      {/* Background Elements */}
-      {/* <div className="absolute top-20 right-20 w-2 h-2 bg-lime-400 rounded-full opacity-60"></div>
-      <div className="absolute bottom-40 right-40 w-1 h-1 bg-lime-400 rounded-full opacity-40"></div>
-      <div className="absolute top-1/2 right-10 w-1.5 h-1.5 bg-lime-400 rounded-full opacity-50"></div> */}
+       {/* 3D Hexagonal Sphere */}
+       <motion.div
+              animate={{ 
+                rotate: [0,360],
+              }}
+              transition={{ 
+                duration: 100,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute top-44  -left-36 w-80 h-80 lg:block hidden"
+            >
+              <motion.div
+                animate={{ 
+                  rotate: [0,360],
+                }}
+                transition={{ 
+                  duration: 100,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="w-full h-full"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <Image src={SphereSpinner} className="opacity-50" alt={""}/>
+              </motion.div>
+            </motion.div>
+
     </section>
   )
 }

@@ -63,10 +63,10 @@ const pricingData = [
 function PricingPage() {
   return (
     <section className="bg-black text-white min-h-screen flex flex-col gap-y-3 relative">
-      <PageHeader title={"Pricing"} subtitle1={"Home"} subtitle2={"pricing"} classsubtitle2={"text-lime-400"} subtitle3={""} classsubtitle3={""} star={""}/>
+      <PageHeader title={"Pricing"} subtitle1={"Home"} subtitle2={"pricing"} classsubtitle2={"text-[#bff747]"} subtitle3={""} classsubtitle3={""} star={""}/>
       
       {/* Scroll Banner - Improved for mobile */}
-      <div className=" bg-lime-400 py-2 sm:py-4 overflow-hidden">
+      <div className=" bg-[#bff747] py-2 sm:py-4 overflow-hidden">
         <motion.div
           className="flex whitespace-nowrap"
           animate={{ x: [0, -1000] }}

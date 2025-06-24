@@ -19,9 +19,8 @@ export default function Home() {
      <Features/>
      <Portfolio/>
      <Testimonial/>
-     {/* <Team/> */}
-     <LatestNewBLog/>
      <Process/>
+     <LatestNewBLog/>
      <Stats/>
     </>
   );

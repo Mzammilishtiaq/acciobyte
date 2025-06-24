@@ -4,46 +4,16 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Stats from '@/components/stats';
 import PageHeader from '../../components/pagerheader';
+import ScrollBanner from '@/components/ScrollBanner';
 export default function Page() {
+
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8">
         <div className='w-full mb-3 sm:mb-5'>
-          <PageHeader title={'Contact'} subtitle1={'Home'} subtitle2={'Contact'} classsubtitle2={'text-lime-400'} subtitle3={''} classsubtitle3={''} star={''}/>
-          <div className="absolute bottom-0 left-0 right-0 bg-lime-400 py-2 sm:py-4 overflow-hidden">
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: [0, -1000] }}
-          transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 20, ease: "linear" } }}
-        >
-          <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8 text-black font-bold text-xs sm:text-base md:text-xl">
-            <span>Android App Development</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Website Development</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Digital Marketing</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>UI/UX Design</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>E-commerce Solutions</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Mobile App Development</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>SEO Optimization</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Brand Identity</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Android App Development</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Website Development</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>Digital Marketing</span>
-            <span className="text-lg sm:text-xl md:text-2xl">✱</span>
-            <span>UI/UX Design</span>
+          <PageHeader title={'Contact'} subtitle1={'Home'} subtitle2={'Contact'} classsubtitle2={'text-[#bff747]'} subtitle3={''} classsubtitle3={''} star={''}/>
+        <ScrollBanner/>
           </div>
-        </motion.div>
-      </div>
-          </div>
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 my-10">
         {/* Left Side: Info */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -139,17 +109,16 @@ export default function Page() {
         </motion.form>
       </div>
     <div className="mt-6 sm:mt-8 lg:mt-10 w-full flex justify-center px-4 sm:px-6 lg:px-8">
-      <iframe
-        src="https://www.google.com/maps?ll=51.528642,-0.101599&z=17&t=m&hl=en-US&gl=US&mapclient=embed&q=London"
-        width="100%"
-        height="250"
-        className="sm:h-[300px] lg:h-[350px]"
-        style={{ border: 0, borderRadius: "12px" }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Google Map - London"
-      ></iframe>
+    <iframe
+          title="Google Maps Location"
+          width="100%"
+          height="400"
+          style={{ border: 0 }}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-73.9882204!3d40.7484405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTkuNiJX!5e0!3m2!1sen!2sus!4v1719193853608"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
     </div>
     <Stats/>
     </div>

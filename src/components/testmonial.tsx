@@ -62,7 +62,7 @@ const Testimonial = () => {
                             <button className="bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300 text-sm">
                                 All Testimonials
                             </button>
-                            <button className="bg-lime-300 hover:bg-lime-400 text-black p-3 rounded-full transition duration-300">
+                            <button className="bg-lime-300 hover:bg-[#bff747] text-black p-3 rounded-full transition duration-300">
                                 <ChevronRight size={24} />
                             </button>
                         </div>
@@ -100,10 +100,10 @@ const Testimonial = () => {
                                         {[...Array(5)].map((_, i) => <Star key={i} className="text-lime-300" fill="#a3e635" />)}
                                     </div>
                                 </div>
-                                <p className="text-gray-300 text-lg mb-6 h-32">
+                                <p className="text-gray-300 lg:text-lg text-sm mb-6 h-32">
                                     {currentTestimonial.text}
                                 </p>
-                                <div className="flex items-center">
+                                <div className="flex items-center mt-20">
                                     <Image src={currentTestimonial.avatar} alt={currentTestimonial.author} width={60} height={60} className="rounded-full object-cover" />
                                     <div className="ml-4">
                                         <p className="font-semibold">{currentTestimonial.author}</p>
@@ -149,9 +149,9 @@ const Testimonial = () => {
                     ))}
                 </div>
             </div>
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-zinc-900 to-black opacity-80 z-0"></div>
+            {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-zinc-900 to-black opacity-80 z-0"></div>
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lime-500/10 rounded-full filter blur-3xl animate-blob"></div>
-            <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-green-500/10 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-green-500/10 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div> */}
         </div>
     );
 };

@@ -5,13 +5,14 @@ import { ChevronDown, X } from 'lucide-react'
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import Logo from '../../public/logo.png'
-import {useRouter} from 'next/navigation'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 
 function Navbar() {
-  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bgColor, setBgColor] = useState('bg-transparent');
   const [lastScrollY, setLastScrollY] = useState(0);
+  const router = useRouter()
 
   useEffect(() => {
     setLastScrollY(window.scrollY);
@@ -63,11 +64,14 @@ function Navbar() {
             onClick={toggleMenu}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6" />
+              <div className='flex items-center justify-center rounded-full bg-[#bff747] p-3'>
+              <X className="w-6 h-6" /></div>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className='flex items-center justify-center rounded-full bg-[#bff747] p-3'>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
+              </div>
             )}
           </button>
         </div>
@@ -86,148 +90,144 @@ function Navbar() {
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="p-6">
+          <div className="p-6 overflow-y-scroll">
             <div className="flex justify-end mb-8">
               <button
                 onClick={closeMenu}
-                className="text-white hover:text-lime-400 transition-colors"
-              >
-                <X className="w-6 h-6" />
+                className="text-white hover:text-[#bff747] transition-colors"
+              ><div className='flex items-center justify-center rounded-full bg-[#bff747] p-3'>
+                <X className="w-6 h-6" /></div>
               </button>
             </div>
             
             <div className="space-y-6">
-              <a
-                href=""
-                className="block text-white hover:text-lime-400 transition-colors font-medium text-lg"
+              <Link
+                href="/"
+                className="block text-white hover:text-[#bff747] transition-colors font-medium text-lg"
                 onClick={closeMenu}
               >
                 HOME
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/project"
-                className="block text-white hover:text-lime-400 transition-colors font-medium text-lg"
+                className="block text-white hover:text-[#bff747] transition-colors font-medium text-lg"
                 onClick={closeMenu}
               >
                 PROJECTS
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/pricing_plan"
-                className="block text-white hover:text-lime-400 transition-colors font-medium text-lg"
+                className="block text-white hover:text-[#bff747] transition-colors font-medium text-lg"
                 onClick={closeMenu}
               >
                 PRICING PLAN
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/blog"
-                className="block text-white hover:text-lime-400 transition-colors font-medium text-lg"
+                className="block text-white hover:text-[#bff747] transition-colors font-medium text-lg"
                 onClick={closeMenu}
               >
                 BLOGS
-              </a>
+              </Link>
               
               {/* Mobile Services Dropdown */}
               <div className="space-y-2">
-                <div className="text-white font-medium text-lg">SERVICES</div>
-                <div className="pl-4 space-y-3">
-                  <a
-                    href="/services/web-development"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Web Development
-                  </a>
-                  <a
-                    href="/services/app-development"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    App Development
-                  </a>
-                  <a
-                    href="/services/digital-marketing"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Digital Marketing
-                  </a>
-                  <a
-                    href="/services/graphic-designing"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Graphic Designing
-                  </a>
-                  <a
-                    href="/services/social-media-marketing"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Social Media Marketing
-                  </a>
-                  <a
-                    href="/services/content-writing"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Content Writing
-                  </a>
-                  <a
-                    href="/services/search-engine-optimization"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Search Engine Optimization
-                  </a>
-                  <a
-                    href="/services/software-development"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Software Development
-                  </a>
-                  <a
-                    href="/services/cyber-secuirty"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Cyber Security
-                  </a>
-                  <a
-                    href="/services/e-commerce"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    E-Commerce
-                  </a>
-                  <a
-                    href="/services/illustrations"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Illustrations
-                  </a>
-                  <a
-                    href="/services/video-animation"
-                    className="block text-gray-300 hover:text-lime-400 transition-colors"
-                    onClick={closeMenu}
-                  >
-                    Video Animation
-                  </a>
-                </div>
+              <div className="relative group">
+            <button
+              type="button"
+              className="text-white hover:text-[#bff747] transition-colors font-medium flex items-center focus:outline-none"
+            >
+              SERVICES
+              <ChevronDown className="ml-1 h-4 w-4" />
+            </button>
+            <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 z-20 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
+              <Link
+                href="/services/web-development"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Web Development
+              </Link>
+              <Link
+                href="/services/app-development"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                App Development
+              </Link>
+              <Link
+                href="/services/digital-marketing"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Digital Marketing
+              </Link>
+              <Link
+                href="/services/graphic-designing"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Graphic Designing
+              </Link>
+              <Link
+                href="/services/social-media-marketing"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Social Media Marketing
+              </Link>
+              <Link
+                href="/services/content-writing"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+               Content Writing
+              </Link>
+              <Link
+                href="/services/search-engine-optimization"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Search Engine Optimization
+              </Link>
+              <Link
+                href="/services/software-development"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Software Development
+              </Link>
+              <Link
+                href="/services/cyber-security"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+               Cyber Security
+              </Link>
+              <Link
+                href="/services/e-commerce"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                E-Commerce
+              </Link>
+              <Link
+                href="/services/illustrations"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+                Illustrations
+              </Link>
+              <Link
+                href="/services/video-animation"
+                className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
+              >
+               Video Animation
+              </Link>
+            </div>
+          </div>
               </div>
               
-              <a
+              <Link
                 href="/about"
-                className="block text-white hover:text-lime-400 transition-colors font-medium text-lg"
+                className="block text-white hover:text-[#bff747] transition-colors font-medium text-lg"
                 onClick={closeMenu}
               >
                 ABOUT US
-              </a>
+              </Link>
               
               {/* Mobile Contact Button */}
               <button 
-                className="w-full bg-lime-400 hover:bg-lime-500 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 text-lg"
+                className="w-full bg-[#bff747] hover:bg-lime-500 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 text-lg"
                 onClick={() => {
                   closeMenu();
                   router.push('/contact');
@@ -246,119 +246,119 @@ function Navbar() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="hidden lg:flex items-center space-x-4 xl:space-x-8"
         >
-          <a
-            href=""
-            className="text-white hover:text-lime-400 transition-colors font-medium"
+          <Link
+            href="/"
+            className="text-white hover:text-[#bff747] transition-colors font-medium"
           >
             HOME
-          </a>
-          <a
+          </Link>
+          <Link
             href="/project"
-            className="text-white hover:text-lime-400 transition-colors font-medium"
+            className="text-white hover:text-[#bff747] transition-colors font-medium"
           >
             PROJECTS
-          </a>
-          <a
+          </Link>
+          <Link
             href="/pricing_plan"
-            className="text-white hover:text-lime-400 transition-colors font-medium"
+            className="text-white hover:text-[#bff747] transition-colors font-medium"
           >
             PRICING PLAN
-          </a>
-          <a
+          </Link>
+          <Link
             href="/blog"
-            className="text-white hover:text-lime-400 transition-colors font-medium"
+            className="text-white hover:text-[#bff747] transition-colors font-medium"
           >
             BLOGS
-          </a>
+          </Link>
           <div className="relative group">
             <button
               type="button"
-              className="text-white hover:text-lime-400 transition-colors font-medium flex items-center focus:outline-none"
+              className="text-white hover:text-[#bff747] transition-colors font-medium flex items-center focus:outline-none"
             >
               SERVICES
               <ChevronDown className="ml-1 h-4 w-4" />
             </button>
             <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 z-20 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
-              <a
+              <Link
                 href="/services/web-development"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Web Development
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/app-development"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 App Development
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/digital-marketing"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Digital Marketing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/graphic-designing"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Graphic Designing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/social-media-marketing"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Social Media Marketing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/content-writing"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                Content Writing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/search-engine-optimization"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Search Engine Optimization
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/software-development"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Software Development
-              </a>
-              <a
-                href="/services/cyber-secuirty"
+              </Link>
+              <Link
+                href="/services/cyber-security"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                Cyber Security
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/e-commerce"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 E-Commerce
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/illustrations"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                 Illustrations
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services/video-animation"
                 className="block px-4 py-2 text-gray-800 hover:bg-lime-100"
               >
                Video Animation
-              </a>
+              </Link>
             </div>
           </div>
-          <a
+          <Link
             href="/about"
-            className="text-white hover:text-lime-400 transition-colors font-medium"
+            className="text-white hover:text-[#bff747] transition-colors font-medium"
           >
             ABOUT US
-          </a>
+          </Link>
         </motion.div>
 
         {/* Contact Button */}
@@ -368,7 +368,7 @@ function Navbar() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="hidden sm:block"
         >
-          <button className="bg-lime-400 hover:bg-lime-500 text-black font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 hover:scale-105 text-sm sm:text-base" onClick={()=>router.push('/contact')}>
+          <button className="bg-[#bff747] hover:bg-lime-500 text-black font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 hover:scale-105 text-sm sm:text-base" onClick={()=>router.push('/contact')}>
             Contact Us
           </button>
         </motion.div>
