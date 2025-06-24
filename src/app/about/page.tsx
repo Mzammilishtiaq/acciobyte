@@ -92,13 +92,13 @@ export default function AboutPage() {
       <AboutAgency />
       <Features />
 
-      <div className="min-h-screen bg-black text-white sm:px-6 py-12 sm:py-16 lg:py-28 flex flex-col lg:flex-col gap-8 sm:gap-12 lg:px-32">
+      <div className="min-h-screen bg-black text-white sm:px-6 py-12 sm:py-16 lg:py-28 flex flex-col lg:flex-col gap-8 sm:gap-12 lg:px-32 px-5">
         {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="flex-1 flex lg:flex-row flex-row items-start lg:items-center justify-around w-full gap-5 lg:gap-8"
+          className="flex-1 flex lg:flex-row flex-col items-start lg:items-center justify-around w-full gap-5 lg:gap-8"
         >
           <div className="flex items-start flex-col w-full lg:w-auto">
             <div className="flex items-center gap-2 mb-4">
