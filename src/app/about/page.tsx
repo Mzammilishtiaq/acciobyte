@@ -207,8 +207,8 @@ export default function AboutPage() {
       </div>
 
       {/* Why Choose Section */}
-      <div className=" relative flex flex-col gap-10 px-4 lg:px-32 overflow-hidden">
-          <div className="w-full flex">
+      <div className=" relative flex flex-col gap-10 lg:px-32 px-5">
+          <div className="w-full flex flex-col lg:flex-row">
             <div className="w-full">
               {/* Section Label */}
               <motion.div
@@ -254,7 +254,7 @@ export default function AboutPage() {
             </motion.p>
           </div>
 
-          <div className="flex lg:flex-row flex-col gap-x-10 w-full">
+          <div className="flex lg:flex-row flex-col lg:gap-x-10 gap-y-10 w-full">
             {/* Feature Boxes */}
             <div className="space-y-4">
               <motion.div
@@ -309,23 +309,27 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="rounded-2xl sm:rounded-3xl overflow-hidden">
+              <div className="rounded-2xl sm:rounded-3xl lg:overflow-hidden">
                 <Image
                   src={wcfeServiceImag}
                   alt="Professional business meeting with team members discussing strategy"
-                  className="w-[50vw] h-[100vh] sm:h-72 md:h-96 object-cover"
+                  className="lg:w-[50vw]  lg:h-[100vh] h-72 md:h-96 object-cover"
                 />
               </div>
             </motion.div>
           </div>
-          <motion.div
-             initial={{ rotate: 0 }}
-             animate={{ rotate: 360 }}
-             transition={{ repeat: Infinity, duration: 9, ease: "linear" }}
-             className="-z-10 w-[20vw] h-[50vh] rounded-full absolute -right-20 top-48"
-            >
-          <img src="https://www.acciobyte.com/_next/static/media/hex.eced7c60.png" alt="" className="w-[50vw] h-[50vh]" />
-          </motion.div>
+          {/* <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 90, ease: "linear" }}
+            className="-z-10 w-[20vw] h-[50vh] rounded-full absolute -right-48 top-48 lg:block hidden"
+          >
+            <img
+              src="https://www.acciobyte.com/_next/static/media/hex.eced7c60.png"
+              alt=""
+              className="w-[70vw] h-[50vh]"
+            />
+          </motion.div> */}
         </div>
        
         <Testimonial/>
