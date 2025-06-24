@@ -207,7 +207,7 @@ export default function AboutPage() {
       </div>
 
       {/* Why Choose Section */}
-      <div className=" relative flex flex-col gap-10 lg:px-32 px-5">
+      <div className=" relative flex flex-col gap-10 lg:px-32 px-5 bg-black/25">
           <div className="w-full flex flex-col lg:flex-row">
             <div className="w-full">
               {/* Section Label */}
@@ -336,17 +336,16 @@ export default function AboutPage() {
  <div className="bg-black text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side with image */}
-          <div className="relative h-[550px] w-[30vw] rounded-2xl overflow-hidden ml-10">
+          <div className="relative h-[550px] lg:w-[30vw] w-full rounded-2xl overflow-hidden lg:ml-10">
               <Image
                   src={TeadImage}
                   alt="Support agent"
-                  className="rounded-2xl w-[30vw]"
+                  className="rounded-2xl lg:w-[30vw] w-full"
               />
-              <div className="absolute bottom-8 right-8 bg-black/60 text-white px-5 py-3 rounded-full flex items-center gap-3 backdrop-blur-sm">
+              <div className="absolute lg:bottom-8 lg:right-8 top-[65%] right-[2%] bg-black/60 text-white px-5 py-3 rounded-full flex items-center gap-3 backdrop-blur-sm">
                   <Phone className="text-[#bff747] w-6 h-6" />
                   <span className="text-lg font-semibold tracking-wider">(30) 8855–314</span>
               </div>
-               <div className="absolute top-1/2 left-0 -translate-x-1/2 w-4 h-4 bg-[#bff747] rounded-full"></div>
           </div>
   
           {/* Right side with FAQ */}
